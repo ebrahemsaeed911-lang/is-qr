@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>IS QR — مولّد رموز QR مجاني</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Tajawal:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%2322D3EE'/%3E%3Cstop%20offset='1'%20stop-color='%230E7490'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='url(%23g)'/%3E%3Crect%20x='22'%20y='30'%20width='8'%20height='40'%20rx='2'%20fill='%23fff'/%3E%3Cpath%20d='M66%2036C60%2030%2040%2028%2040%2041C40%2053%2066%2047%2066%2060C66%2072%2046%2071%2039%2064'%20fill='none'%20stroke='%23fff'%20stroke-width='8'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="#"><span class="mark">IS</span>IS QR</a>
+        <div class="links">
+          <a href="#generator">إنشاء</a><a href="#features">المميزات</a>
+        </div>
+        <a class="btn sm" href="#generator">إنشاء QR +</a>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <div data-aos="fade-up">
+          <h1>أنشئ رمز QR الخاص بك <span>مجانًا وبدون حدود</span></h1>
+          <p class="lead">
+            حوّل أي رابط أو نص أو معلومات اتصال إلى رمز QR في ثوانٍ. لا تسجيل،
+            لا رسوم، فقط أنشئ وحمّل.
+          </p>
+          <div class="chips">
+            <span class="chip">بدون تسجيل</span
+            ><span class="chip">بدون رسوم</span
+            ><span class="chip">شعار مخصص</span
+            ><span class="chip">تحميل PNG وSVG</span>
+          </div>
+        </div>
+        <div class="hero-card"><div id="heroBox"></div></div>
+      </section>
+
+      <section id="generator" class="ws">
+        <div class="panel">
+          <h2>1. المحتوى</h2>
+          <div class="types" id="types">
+            <button class="type active" data-type="link">رابط</button>
+            <button class="type" data-type="text">نص</button>
+            <button class="type" data-type="wifi">واي فاي</button>
+            <button class="type" data-type="email">بريد إلكتروني</button>
+            <button class="type" data-type="phone">هاتف</button>
+          </div>
+
+          <div id="mainWrap">
+            <label class="fl" for="main">القيمة</label>
+            <input id="main" autocomplete="off" />
+          </div>
+
+          <div id="wifiWrap" hidden>
+            <label class="fl" for="ssid">اسم الشبكة (SSID)</label>
+            <input id="ssid" autocomplete="off" dir="ltr" />
+            <div class="row">
+              <div>
+                <label class="fl" for="wpass">كلمة السر</label
+                ><input id="wpass" type="password" dir="ltr" />
+              </div>
+              <div>
+                <label class="fl" for="wsec">التشفير</label>
+                <select id="wsec">
+                  <option value="WPA">WPA / WPA2</option>
+                  <option value="WEP">WEP</option>
+                  <option value="nopass">بدون كلمة سر</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="err" id="err"></div>
+
+          <h2 class="mt-22">2. التصميم</h2>
+          <div class="presets" id="presets"></div>
+          <div class="row mt-14">
+            <div>
+              <label class="fl" for="dotType">شكل النقط</label>
+              <select id="dotType">
+                <option value="square">مربع</option>
+                <option value="rounded">مدوّر</option>
+                <option value="dots">دائري</option>
+                <option value="classy">كلاسيكي</option>
+                <option value="classy-rounded">كلاسيكي مدوّر</option>
+                <option value="extra-rounded">مدوّر جدًا</option>
+              </select>
+            </div>
+            <div>
+              <label class="fl" for="cornerType">شكل الزوايا</label>
+              <select id="cornerType">
+                <option value="square">مربع</option>
+                <option value="extra-rounded">مدوّر</option>
+                <option value="dot">دائري</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div>
+              <label class="fl" for="cornerDot">شكل نقطة الزاوية</label>
+              <select id="cornerDot">
+                <option value="square">مربع</option>
+                <option value="dot">دائري</option>
+              </select>
+            </div>
+            <div>
+              <label class="fl">ألوان سريعة</label>
+              <div class="swatches" id="swatches"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label class="fl" for="fgIn">لون الرمز</label
+              ><input type="color" id="fgIn" />
+            </div>
+            <div>
+              <label class="fl" for="bgIn">لون الخلفية</label
+              ><input type="color" id="bgIn" />
+            </div>
+          </div>
+
+          <h2 class="mt-22">3. الشعار (اختياري)</h2>
+          <label class="drop" for="logoIn" id="dropLbl"
+            >اضغط لرفع شعار (PNG أو JPG أو SVG أو WEBP، حتى 2 ميجا)</label
+          >
+          <input
+            type="file"
+            id="logoIn"
+            accept="image/png,image/jpeg,image/svg+xml,image/webp"
+            hidden
+          />
+          <div class="status logo-status">
+            <span id="logoName" class="muted">لم يتم رفع شعار</span>
+            <button class="btn ghost sm" id="rmLogo" hidden>إزالة</button>
+          </div>
+          <div class="err" id="logoErr"></div>
+          <div class="logo-size-row">
+            <span>حجم الشعار</span>
+            <input type="range" id="logoSize" min="12" max="35" value="26" />
+            <span id="logoPctTxt" class="logo-pct">26%</span>
+          </div>
+        </div>
+
+        <div class="panel preview">
+          <h2>المعاينة</h2>
+          <div class="stage" id="stage">
+            <div id="qrBox"></div>
+            <div class="cap" id="capOut" hidden></div>
+          </div>
+          <div class="status" id="scanStatus"></div>
+          <div class="cap-area">
+            <label class="fl" for="capIn">نص أسفل الرمز (اختياري)</label
+            ><input
+              id="capIn"
+              maxlength="60"
+              autocomplete="off"
+              placeholder="مثال: امسح للتواصل معنا"
+            />
+            <div class="types cap-styles" id="capStyles"></div>
+          </div>
+          <div class="dl">
+            <select id="fmt">
+              <option value="png">PNG</option>
+              <option value="svg">SVG</option>
+            </select>
+            <select id="resIn">
+              <option value="512">512px</option>
+              <option value="1024" selected>1024px</option>
+              <option value="2048">2048px</option>
+            </select>
+            <button class="btn" id="dlBtn">تحميل الرمز</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <div class="panel" data-aos="fade-up">
+          <h3>بدون حدود</h3>
+          <p class="muted">
+            أنشئ أي عدد من الرموز في الجلسة الواحدة دون اشتراكات.
+          </p>
+        </div>
+        <div class="panel" data-aos="fade-up" data-aos-delay="150">
+          <h3>يعمل داخل متصفحك</h3>
+          <p class="muted">
+            الرمز يُنشأ محليًا، فلا تُرسل بياناتك إلى أي خادم.
+          </p>
+        </div>
+        <div class="panel" data-aos="fade-up" data-aos-delay="300">
+          <h3>جودة قابلة للمسح</h3>
+          <p class="muted">
+            تحذير تلقائي عند ضعف التباين، ورفع مستوى التصحيح عند إضافة شعار.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2026 IS QR
+      <p class="developed">Developed by Ibrahim Saeed</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0/lib/qr-code-styling.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
